@@ -28,8 +28,13 @@ let g:auto_save_in_insert_mode = 0
 
 
 "spaceline==========================================================
-let g:spaceline_seperate_style= 'curve'
-let g:spaceline_git_branch_icon= ' '
+" let g:spaceline_seperate_style= 'curve'
+" let g:spaceline_git_branch_icon= ' '
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#formatter = 'default'
+
 
 
 "撤销树=============================================================
@@ -420,10 +425,10 @@ autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set sho
 let g:indentLine_fileTypeExclude = ['dashboard']
 
 
-" let g:lightline = {
-"       \ 'colorscheme': 'wombat',
-"       \ }
-" set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+set noshowmode
 set laststatus=2
 " if !has('gui_running')
 "   set t_Co=256

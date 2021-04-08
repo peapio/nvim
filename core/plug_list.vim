@@ -6,13 +6,16 @@ call plug#begin('~/.config/nvim/vim/plugged')
 "美化插件
 "Plug 'hardcoreplayers/spaceline.vim'
 " Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
 Plug 'liuchengxu/eleline.vim'
 Plug 'hardcoreplayers/vim-buffet'
 Plug 'luochen1990/rainbow'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'hardcoreplayers/oceanic-material'
 Plug 'mhartington/oceanic-next'
-Plug 'hardcoreplayers/dashboard-nvim'
+"Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'morhetz/gruvbox'
 Plug 'octol/vim-cpp-enhanced-highlight',{'for':'cpp'} " c++高亮
 Plug 'Yggdroot/indentLine'                            " 缩进可视化
