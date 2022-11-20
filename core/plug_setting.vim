@@ -174,56 +174,130 @@ let g:rainbow_conf = {
 \}
 
 
+" Plug 'neovim/nvim-lspconfig'
+  if has("nvim")
+    Plug 'williamboman/nvim-lsp-installer'
+  endif
+  Plug 'SirVer/ultisnips'
+  Plug 'jayli/vim-easycomplete'
+
+  nnoremap gr :EasyCompleteReference<CR>
+  nnoremap gd :EasyCompleteGotoDefinition<CR>
+  nnoremap rn :EasyCompleteRename<CR>
+  nnoremap gb :BackToOriginalBuffer<CR>
+
+  let g:easycomplete_diagnostics_enable = 1
+  let g:easycomplete_signature_enable = 1
+  let g:easycomplete_tabnine_enable = 1
+  let g:easycomplete_cursor_word_hl = 1
+  let g:easycomplete_scheme = "blue"
+  let g:easycomplete_menu_skin = {
+        \   "buf": {
+        \      "kind":"羅",
+        \      "menu":"[B]",
+        \    },
+        \   "snip": {
+        \      "kind":"",
+        \      "menu":"[S]",
+        \    },
+        \   "dict": {
+        \      "kind":"",
+        \      "menu":"[D]",
+        \    },
+        \   "tabnine": {
+        \      "kind":"",
+        \    },
+        \ }
+  let g:easycomplete_sign_text = {
+        \   'error':       "",
+        \   'warning':     "",
+        \   'information': '',
+        \   'hint':        ''
+        \ }
+
+  let g:easycomplete_filetypes = {"r": {
+        \ "whitelist": []
+        \ }}
+  let g:easycomplete_tabnine_config = {
+        \ 'line_limit': 800,
+        \ 'max_num_result': 10,
+        \ }
+
+  let g:easycomplete_lsp_type_font = {
+        \ 'class': "",     'color': "",
+        \ 'constant': "",  'constructor': "",
+        \ 'enum': "",      'enummember': "",
+        \ 'field': "料",    'file': '',
+        \ 'folder': "",    'function': "ƒ",
+        \ 'interface': "", 'keyword': "",
+        \ 'snippet': "",   'struct': "פּ",
+        \ 'text': "",      'typeparameter': "",
+        \ 'variable': "",  'module':'',
+        \ 'event': '',
+        \ 'r':'', 't':'',
+        \ 'f':'', 'c':'',
+        \ 'u':'𝘶', 'e':'𝘦',
+        \ 's':'פּ', 'v':'',
+        \ 'i':'𝘪', 'm':'',
+        \ 'p':'', 'k':'𝘬',
+        \ 'o':"𝘰", 'd':'𝘥',
+        \ 'l':"𝘭", 'a':"𝘢",
+        \ }
+
 
 "coc.nvim自动补全============================================================
-set hidden
-set updatetime=100
-set shortmess+=c
-set signcolumn=yes
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"使用tab
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-autocmd CursorHold * silent call CocActionAsync('highlight')
-nmap <leader>rn <Plug>(coc-rename)
-augroup mygroup
-  autocmd!
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-" xmap <leader>a  <Plug>(coc-codeaction-selected)
-" nmap <leader>a  <Plug>(coc-codeaction-selected)
-" nmap <leader>ac  <Plug>(coc-codeaction)
-" nmap <leader>qf  <Plug>(coc-fix-current)
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+"
+"Use <Tab> and <S-Tab> to navigate the completion list
+"
+"set hidden
+"set updatetime=100
+"set shortmess+=c
+"set signcolumn=yes
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+""使用tab
+"function! s:check_back_space() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"inoremap <silent><expr> <c-space> coc#refresh()
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"nmap <silent> [g <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"nnoremap <silent> K :call <SID>show_documentation()<CR>
+"function! s:show_documentation()
+"  if (index(['vim','help'], &filetype) >= 0)
+"    execute 'h '.expand('<cword>')
+"    
+"  else
+"    call CocAction('doHover')
+"  endif
+"endfunction
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+"nmap <leader>rn <Plug>(coc-rename)
+"augroup mygroup
+"  autocmd!
+"  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+"  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+"augroup end
+"" xmap <leader>a  <Plug>(coc-codeaction-selected)
+"" nmap <leader>a  <Plug>(coc-codeaction-selected)
+"" nmap <leader>ac  <Plug>(coc-codeaction)
+"" nmap <leader>qf  <Plug>(coc-fix-current)
+"xmap if <Plug>(coc-funcobj-i)
+"xmap af <Plug>(coc-funcobj-a)
+"omap if <Plug>(coc-funcobj-i)
+"omap af <Plug>(coc-funcobj-a)
+"command! -nargs=0 Format :call CocAction('format')
+"command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+"command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 
 "Leaderf设置============================================================

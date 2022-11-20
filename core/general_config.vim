@@ -26,6 +26,8 @@ endif
 "set guioptions-=b              "  使用内置 tab 样式而不是 gui
 "set guioptions-=e
 "set nolist
+"
+
 
 set nu
 set relativenumber
@@ -80,3 +82,6 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "设置光标回到上次编辑的位置
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+

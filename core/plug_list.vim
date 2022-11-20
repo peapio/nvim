@@ -4,18 +4,18 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/vim/plugged')
 "美化插件
-"Plug 'hardcoreplayers/spaceline.vim'
-" Plug 'itchyny/lightline.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'hardcoreplayers/spaceline.vim'
+ Plug 'itchyny/lightline.vim'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
 
-Plug 'liuchengxu/eleline.vim'
-Plug 'hardcoreplayers/vim-buffet'
+ Plug 'liuchengxu/eleline.vim'
+Plug 'bagrat/vim-buffet'
 Plug 'luochen1990/rainbow'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'hardcoreplayers/oceanic-material'
 Plug 'mhartington/oceanic-next'
-"Plug 'hardcoreplayers/dashboard-nvim'
+Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'morhetz/gruvbox'
 Plug 'octol/vim-cpp-enhanced-highlight',{'for':'cpp'} " c++高亮
 Plug 'Yggdroot/indentLine'                            " 缩进可视化
@@ -26,7 +26,7 @@ Plug 'kristijanhusak/defx-icons'
 "功能插件 :使用更顺畅
 Plug 'chxuan/vim-edit'
 Plug 'gcmt/wildfire.vim'                                                                  " 智能选中enter
-Plug 'suan/vim-instant-markdown',  {'for': 'markdown'}                                    " markdown预览
+" Plug 'suan/vim-instant-markdown',  {'for': 'markdown'}                                    " markdown预览
 Plug 'dhruvasagar/vim-table-mode', {'on':'TableModeToggle'}                               " 更规范的表格
 Plug 'kshenoy/vim-signature'                                                              " 书签跳转，ma
 Plug 'junegunn/vim-easy-align'                                                            " 快速对齐 ,a2<space>第二个空格对齐，,a-<space>倒数，,a*<space>所有，,a<Enter>*<space>右对齐
@@ -40,10 +40,13 @@ Plug 'itchyny/screensaver.vim',    {'on': 'ScreenSaver'}                        
 Plug 'jiangmiao/auto-pairs'                                                               " 自动补全括号
 Plug 'tpope/vim-commentary'                                                               " 注释插件
 Plug 'tpope/vim-surround'                                                                 " yss"加＂号，csw'" ＇修改成＂　ds'删除＇
-Plug 'vim-scripts/fcitx.vim',      {'for': ['markdown','cpp','vim','sh']}                 " 切换中文不影响普通模式输入
+" Plug 'vim-scripts/fcitx.vim',      {'for': ['markdown','cpp','vim','sh']}                 " 切换中文不影响普通模式输入
 " 功能插件:
 Plug 'dense-analysis/ale'                                                                                    " 错误提示
-Plug 'neoclide/coc.nvim',            {'branch': 'release'}                                                   " 自动补全
+Plug 'jayli/vim-easycomplete'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'SirVer/ultisnips'
+" Plug 'neoclide/coc.nvim',            {'branch': 'release'}                                                   " 自动补全
 Plug 'honza/vim-snippets'                                                                                    " 代码片
 Plug 'yianwillis/vimcdoc'                                                                                    " vim中文手册
 Plug 'mbbill/undotree',              {'on':'UndotreeToggle'}                                                 " 撤销树（代码回滚）
@@ -67,7 +70,7 @@ Plug 'tweekmonster/startuptime.vim', {'on': 'StartupTime'}                      
 "Plug 'wakatime/vim-wakatime'                      " 统计代码时间
 "Plug 'SirVer/ultisnips'
 "Plug 'rhysd/github-complete.vim'
-"Plug 'simnalamburt/vim-mundo'                     "  撤销树可视化
+Plug 'simnalamburt/vim-mundo'                     "  撤销树可视化
 
 
 call plug#end()
